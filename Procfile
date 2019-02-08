@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/my_first_telegram-1.0-SNAPSHOT.jar
+web: java -Dserver.port=8080 -jar target/my_first_telegram-1.0-SNAPSHOT.jar
