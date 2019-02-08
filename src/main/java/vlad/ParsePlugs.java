@@ -1,4 +1,4 @@
-package vlad.telegram.bot.ver1;
+package vlad;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

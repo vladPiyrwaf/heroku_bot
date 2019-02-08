@@ -1,4 +1,4 @@
-package vlad.telegram.bot.ver1;
+package vlad;
 
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
