@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>my_first_telegram</groupId>
+  <artifactId>my_first_telegram</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20190213193417</lastUpdated>
+  </versioning>
+</metadata>
