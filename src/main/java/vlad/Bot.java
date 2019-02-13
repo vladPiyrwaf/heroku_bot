@@ -45,6 +45,10 @@ public class Bot  extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {       //для обновления бота
         Message message = update.getMessage();
+        String txt = message.getText();
+        if(txt.equals("/start")){
+            sendMsg(message, "Привет, если хочешь узнать баллы на дорогах Самары – напиши '/Пробки' или нажми кнопку.");
+        }
         if(message != null && message.hasText()) {
             switch (message.getText()) {
                 case "/help":
