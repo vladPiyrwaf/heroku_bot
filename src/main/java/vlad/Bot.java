@@ -48,11 +48,12 @@ public class Bot  extends TelegramLongPollingBot {
         Message message = update.getMessage();
         String txt = message.getText();
         if(txt.equals("/start")){
-            sendMsg(message, "Привет, §если хочешь узнать баллы на дорогах Самары – напиши '/Пробки' или нажми кнопку.");
+            sendMsg(message, "Привет, я показываю баллы на дорогах Самары – напиши '/Пробки'." + "\n"
+                    + "Могу показать погоду в Самаре - напиши '/Погода'.");
         }
         if(message != null && message.hasText()) {
             switch (message.getText()) {
-                case "/help":
+                case "/Помомощь":
                     sendMsg(message, "Чем могу помочь?");
                     break;
                 case "/Пробки":
