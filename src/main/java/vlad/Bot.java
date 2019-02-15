@@ -53,7 +53,7 @@ public class Bot  extends TelegramLongPollingBot {
         }
         if(message != null && message.hasText()) {
             switch (message.getText()) {
-                case "/Помомощь":
+                case "/Что я умею":
                     sendMsg(message, "Чем могу помочь?");
                     break;
                 case "/Пробки":
@@ -89,7 +89,7 @@ public class Bot  extends TelegramLongPollingBot {
         List<KeyboardRow> keyboardRowList = new ArrayList<KeyboardRow>();
         KeyboardRow keyboardFirstRow = new KeyboardRow();
 
-        keyboardFirstRow.add(new KeyboardButton("/help"));
+        keyboardFirstRow.add(new KeyboardButton("/Что я умею"));
         keyboardFirstRow.add(new KeyboardButton("/Пробки"));
         keyboardFirstRow.add(new KeyboardButton("/Погода"));
 
