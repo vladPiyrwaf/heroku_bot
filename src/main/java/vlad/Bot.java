@@ -11,6 +11,7 @@ import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class Bot  extends TelegramLongPollingBot {
         Message message = update.getMessage();
         String txt = message.getText();
         if(txt.equals("/start")){
-            sendMsg(message, "Привет, если хочешь узнать баллы на дорогах Самары – напиши '/Пробки' или нажми кнопку.");
+            sendMsg(message, "Привет, §если хочешь узнать баллы на дорогах Самары – напиши '/Пробки' или нажми кнопку.");
         }
         if(message != null && message.hasText()) {
             switch (message.getText()) {
@@ -61,6 +62,12 @@ public class Bot  extends TelegramLongPollingBot {
                         e.printStackTrace();
                     }
                     break;
+                 case "/Погода":
+                    try {
+                        sendMsg(message, Samara_Weather.getWeather());
+                    } catch (IOException e){
+                        System.err.println("Неизвестная ошибка" + e);
+                    }
                 default:
                     try {
                     } catch (Exception e) {
@@ -83,6 +90,7 @@ public class Bot  extends TelegramLongPollingBot {
 
         keyboardFirstRow.add(new KeyboardButton("/help"));
         keyboardFirstRow.add(new KeyboardButton("/Пробки"));
+        keyboardFirstRow.add(new KeyboardButton("/Погода"));
 
         keyboardRowList.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
@@ -90,7 +98,7 @@ public class Bot  extends TelegramLongPollingBot {
 
 
     public String getBotUsername() {
-        return "SamaraBot";
+        return "SamaraCityBot";
     }
 
     public String getBotToken() {
