@@ -40,17 +40,17 @@ public class Bot  extends TelegramLongPollingBot {
         }
         if(message != null && message.hasText()) {
             switch (message.getText()) {
-                case "/Что я умею":
+                case "Что я умею":
                     sendMsg(message, "Чем могу помочь?");
                     break;
-                case "/Пробки":
+                case "Пробки":
                     try {
                         sendMsg(message, ParsePlugs.getPlugs());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     break;
-                 case "/Погода":
+                 case "Погода":
                     try {
                         sendMsg(message, Samara_Weather.getWeather());
                     } catch (IOException e){
